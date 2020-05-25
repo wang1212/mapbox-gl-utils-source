@@ -1,6 +1,6 @@
 // more see http://rollupjs.org/guide/en/#configuration-files
 
-import typescript from '@rollup/plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 import progress from 'rollup-plugin-progress'
 import visualizer from 'rollup-plugin-visualizer'
@@ -65,7 +65,7 @@ export default {
 		},
 	],
 	plugins: [
-		typescript(),
+		typescript({ useTsconfigDeclarationDir: true }),
 		progress({
 			clearLine: false, // default: true
 		}),

@@ -4,6 +4,8 @@ This is a startup development configuration template used to build the library.
 
 The build tool is based on [rollup](http://rollupjs.org/) and [typescript](https://www.typescriptlang.org/), among other tools.
 
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
 ## Bundle
 
 Run `npm run build`, the following bundles will eventually be generated.
@@ -26,7 +28,7 @@ First, `clone` to local:
 
 ```bash
 git clone https://github.com/wang1212/create-lib-starter.git
-git checkout typescript
+git reset --hard typescript
 npm install
 ```
 

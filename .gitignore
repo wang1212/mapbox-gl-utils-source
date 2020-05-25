@@ -11,6 +11,7 @@
 
 # bundle
 /build
+/types
 
 # rollup visualizer
 stats.html
