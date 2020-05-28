@@ -6,7 +6,7 @@ import progress from 'rollup-plugin-progress'
 import visualizer from 'rollup-plugin-visualizer'
 import filesize from 'rollup-plugin-filesize'
 
-const name = 'myLib'
+const name = 'mapboxgl._utils.Source'
 
 export default {
 	input: 'src/index.ts',
@@ -15,14 +15,14 @@ export default {
 			file: 'build/bundle.js',
 			format: 'iife',
 			name,
-			// globals: { cesium: 'Cesium' },
+			globals: { 'mapbox-gl': 'mapboxgl' },
 			sourcemap: true,
 		},
 		{
 			file: 'build/bundle.min.js',
 			format: 'iife',
 			name,
-			// globals: { cesium: 'Cesium' },
+			globals: { 'mapbox-gl': 'mapboxgl' },
 			sourcemap: true,
 			plugins: [terser()],
 		},
@@ -30,14 +30,14 @@ export default {
 			file: 'build/bundle.umd.js',
 			format: 'umd',
 			name,
-			// globals: { cesium: 'Cesium' },
+			globals: { 'mapbox-gl': 'mapboxgl' },
 			sourcemap: true,
 		},
 		{
 			file: 'build/bundle.umd.min.js',
 			format: 'umd',
 			name,
-			// globals: { cesium: 'Cesium' },
+			globals: { 'mapbox-gl': 'mapboxgl' },
 			sourcemap: true,
 			plugins: [terser()],
 		},
@@ -72,5 +72,5 @@ export default {
 		visualizer({ sourcemap: true, open: false, gzipSize: false }),
 		filesize(),
 	],
-	external: [],
+	external: ['mapbox-gl'],
 }

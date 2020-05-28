@@ -1,15 +1,38 @@
-# create lib starter
+# Mapbox-GL utils - Source
 
-这是用于构建库的启动开发配置模板。
+这是 [Mapbox-GL](https://docs.mapbox.com/mapbox-gl-js/overview/) 的一个工具库。
 
-该构建工具基于 [rollup](http://rollupjs.org/) 和 [typescript](https://www.typescriptlang.org/) 等工具。
+该工具提供了日常使用的地图数据源（[Source](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/)）。
+
+[Demo](./test/index.html)
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-## 打包
+## 地图资源
 
-运行 `npm run build`, 最终将生成以下捆绑包。
+包含以下的地图服务资源：
 
+-   TianDiTu
+
+    -   TianDiTu.satellite.map
+    -   TianDiTu.satellite.annotation
+    -   TianDiTu.streets.map
+    -   TianDiTu.streets.annotation
+
+-   Google
+
+    -   Google.satellite.Map
+    -   Google.streets.mapWithAnnotation
+
+-   OpenStreetMap
+
+    -   OSM.streets.mapWithAnnotation
+
+## 打包文件
+
+提供了以下捆绑包文件:
+
+    types/
     build/
     ├── bundle.js
     ├── bundle.min.js
@@ -20,32 +43,65 @@
     ├── bundle.umd.js
     └── bundle.umd.min.js
 
-还将生成相应的 **sourcemap** 文件。
+同时也提供了对应的 **sourcemap** 文件。
 
 ## 用法
 
-首先, `clone` 到本地
+### 浏览器
+
+在浏览器中，通过 `<script>` 标签引用：
+
+```html
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+<!-- 引用该工具库 -->
+<script src="../build/bundle.min.js"></script>
+```
+
+该工具库挂载在 `mapboxgl._utils.Source` 位置，所以你可以这样使用：
+
+```js
+const { TianDiTu, Google } = mapboxgl._utils.Source
+```
+
+**_如果你无法获取捆绑包文件, 你可以尝试 [自己构建](#build)._**
+
+### Node.js
+
+通过 npm 安装：
 
 ```bash
-git clone https://github.com/wang1212/create-lib-starter.git
-git reset --hard typescript
+npm install mapbox-gl-utils-source
+```
+
+这样使用：
+
+```js
+// ES Module
+import { TianDiTu, Google } from 'mapbox-gl-utils-source'
+
+// CommonJS
+const utilsSource = require('mapbox-gl-utils-source')
+```
+
+## 构建
+
+出于你无法获取到 bundle 文件，或者想自己添加额外的地图服务资源等其它原因，你可以自己构建。
+
+首先， `clone` 到本地
+
+```bash
+git clone https://github.com/wang1212/mapbox-gl-utils-source.git <dir>
+cd <dir>/
 npm install
 ```
 
-修改 `package.json` 信息, 例如 `name`, `description` 等。
-
-然后, 将仓库远程地址修改为你自己的:
+然后，您可以自己修改 **src/** 中的文件，并在完成后运行以下命令：
 
 ```bash
-git remote set-url origin 'your own address'
+npm run build
 ```
 
-## 其它
-
-由于构建工具的不同，提供了多种选择：
-
--   [babel](https://github.com/wang1212/create-lib-starter/) - 基于 babel.js 构建。
--   [typescript](https://github.com/wang1212/create-lib-starter/tree/typescript) - 基于 typescript 构建。 (分支)
+捆绑包文件将在 **build/** 文件夹中生成，包括 **sourcemap** 文件。
 
 ## 许可
 
