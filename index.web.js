@@ -1,7 +1,7 @@
 'use strict'
 
 if (process.env.NODE_ENV === 'production') {
-	module.exports = require('./build/bundle')
+	module.exports = require('./build/bundle.umd')
 } else {
-	module.exports = require('./build/bundle.min')
+	module.exports = require('./build/bundle.umd.min')
 }
