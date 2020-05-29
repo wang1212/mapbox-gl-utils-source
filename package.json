@@ -24,6 +24,9 @@
 		"build": "rollup --config",
 		"lint": "eslint --config .eslintrc.json --ext .js,.ts --ignore-pattern src/vendors/**/* src/"
 	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
 	"files": [
 		"build/",
 		"types/",
