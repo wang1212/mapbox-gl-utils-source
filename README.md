@@ -1,5 +1,12 @@
 # Mapbox-GL utils - Source
 
+![LICENSE](https://badgen.net/github/license/wang1212/mapbox-gl-utils-source)
+[![NPM VERSION](https://badgen.net/npm/v/mapbox-gl-utils-source)](https://www.npmjs.com/package/mapbox-gl-utils-source)
+![DOWNLOAD](https://badgen.net/npm/dt/mapbox-gl-utils-source)
+![TYPES](https://badgen.net/npm/types/mapbox-gl-utils-source)
+![LAST COMMIT](https://badgen.net/github/last-commit/wang1212/mapbox-gl-utils-source)
+![MINI+GZIP SIZE](https://badgen.net/bundlephobia/minzip/mapbox-gl-utils-source)
+
 This is a utils of [Mapbox-GL](https://docs.mapbox.com/mapbox-gl-js/overview/).
 
 The tool provides a data [Source](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/) for daily use.
